@@ -1,17 +1,25 @@
+//
+//  Song.swift
+//  
+//
+//  Created by Parshva Shah on 9/18/22.
+//
+
 import Fluent
 import Vapor
 
-final class Todo: Model, Content {
-    static let schema = "todos"
+final class Song: Model, Content {
+    
+    static let schema: String = "songs"
     
     @ID(key: .id)
     var id: UUID?
-
+    
     @Field(key: "title")
     var title: String
-
-    init() { }
-
+    
+    init() {}
+    
     init(id: UUID? = nil, title: String) {
         self.id = id
         self.title = title
